@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TopSapp · Mapa (protótipo)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<div id="stage">
+    <svg id="map" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mapa com clientes, chamados e viabilidades">
+        <!-- camadas do mapa (defs, s3d, s2d, imgNav): carregadas por mapa.js -->
+        <path id="route" d="" fill="none" stroke="#0A84FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="pins"></g>
+        <g id="me">
+            <circle id="me1" cx="0" cy="0" r="18" fill="#0A84FF" fill-opacity=".2"/>
+            <circle id="me2" cx="0" cy="0" r="7" fill="#0A84FF" stroke="#fff" stroke-width="3"/>
+        </g>
+    </svg>
+</div>
+
+<div class="ctl">
+<button id="bL" aria-label="Camadas">
+    <svg viewBox="0 0 24 24">
+        <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/>
+        <path d="M9 4v14M15 6v14"/>
+    </svg>
+</button>
+<button id="bG" aria-label="Minha localização">
+    <svg viewBox="0 0 24 24">
+        <path d="M3 11l18-8-8 18-2-8z"/>
+    </svg>
+</button>
+<button id="bT" aria-label="Alternar 2D e 3D">2D</button>
+<button id="bC" aria-label="Bússola" style="color:var(--blue)">N</button>
+</div>
+<div id="layers"></div>
+<div class="toast" id="toast"></div>
+<div class="sheet" id="sheet"></div>
+
+<div id="nav">
+    <div class="lanes">
+        <span>↑</span>
+        <span>↑</span>
+        <span>↑</span>
+        <span>↑</span>
+        <b>↱</b>
+    </div>
+    <div class="nrow">
+        <span class="dist" id="nd">0,2 km</span>
+        <span class="exit">Saída 2</span>
+    </div>
+    <div class="street" id="ns">Av. Principal</div>
+</div>
+<div class="speed" id="sp">VELOCIDADE<br>MÁXIMA<span>60</span></div>
+<div id="eta">
+    <div class="eta"><b id="ea">--:--</b><span>chegada</span></div>
+    <div class="eta"><b id="em">0</b><span>min</span></div>
+    <div class="eta"><b id="ek">0</b><span>km</span></div>
+    <button class="end" id="bE">Encerrar</button>
+</div>
+</div>
+<script src="mapa.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
